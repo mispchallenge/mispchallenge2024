@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<!--
+	Arcana by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>MISP Challenge-Task1 Instructions</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header">
+
+					<!-- Logo -->
+					<!-- <img src="images/isca.png" width="6%" height="6%" style="margin:0 77% 0 0;"> -->
+					<!-- <h1 style="font-size: 120%;  margin: -4% 0 -2% 0"><a href="index.html" id="logo">Multimodal Information
+							Based Speech Processing (MISP) Challenge 2023</a></h1> -->
+					<h1 style="font-size: 120%;  margin: -1% 0% -1% 0%;"><a href="index.html" id="logo">Multimodal Information
+								Based Speech Processing (MISP) 2023 Challenge</a></h1> 	
+					<img src="images/ieee.svg" width="7%"height="7%" style="margin:-10% 0% 3% 79%;">
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="overview.html">Overview</a></li>
+								<li><a href="data.html">Data</a></li>
+								<li class="current">
+									<a href="#">Task</a>
+									<ul>
+										<li><a href="task1_instructions.html">Instructions</a></li>
+										<li><a href="task1_software.html">Baseline</a></li>
+						                <!-- <li><a href="task1_submission.html">Submission</a></li> -->
+										<li><a href="task1_leaderboard.html">Leaderboard</a></li>
+									</ul>
+								</li>
+								<!-- <li>
+									<a href="#">Task3</a>
+									<ul>
+										<li><a href="task3_instructions.html">Instructions</a></li>
+										<li><a href="task3_data.html">Data</a></li>
+										<li><a href="task3_software.html">Software</a></li>
+										<li><a href="task3_submission.html">Submission</a></li>
+									</ul>
+								</li> -->
+								<li><a href="download.html">Registration</a></li>
+								<li><a href="extral_data.html">Extra Data</a></li>
+								<!-- <li><a href="results.html">Results</a></li> -->
+								<!-- <li><a href="contact.html">Contact</a></li> -->
+							</ul>
+						</nav>
+
+				</div>
+
+			<!-- Main -->
+				<section class="wrapper style1">
+					<div class="container">
+						
+						<h1 style="font-size: 150%;">Instructions</h1>
+						<p>Audio-visual target speaker extraction (AVTSE) aims to extract the target speaker’s speech from mixtures containing various speakers and background noise using audio and video data. In MISP 2023 challenge, we will explore the impact of the front-end AVTSE system on the back-end recognition system. In the development and evaluation stage, we only use middle-field video and 6-channels far-field audio. In addition, we will provide speaker related speech timestamps, which participants can use to segment the audio.</p>
+						
+
+						<h1 style="font-size: 150%;">Evaluation</h1>
+						<p>The ultimate goal of studying the front-end speech processing system is to improve the performance of the back-end system. To explore the impact of AVTSE on the back-end system, we will use an ASR	model to decode the extracted audio, and calculate character error rate (CER) as the evaluation metric.</p>
+						<center>
+							<figure style="padding:0px;border:0px; margin:10px">
+							<img src="images/CER.png" style="width:300px;padding:0px;border:0" />
+							</figure>
+						</center>
+						<p>Where, S, D, and I represent the number of substitutions, deletions, and insertions, respectively. N is the number of characters in ground truth. The lower CER value (with 0 being a perfect score), the better the recognition performance, which means the better the performance of AVTSE.</p>
+						
+						<p>To enable participants to develop and adjust their AVTSE systems, we will provide a pre-trained ASR model, which is the latest research of our team. To better investigate the role of the AVTSE system, focusing on the enhancements brought by audio improvements, we only use the audio-only ASR part of <a href="https://ieeexplore.ieee.org/abstract/document/10219701/">paper</a>.</p>
+						<p>
+							If you find the above system helpful, please cite:</br>
+						
+@inproceedings{dai2023improving,
+  author={Dai, Yusheng and Chen, Hang and Du, Jun and Ding, Xiaofei and Ding, Ning and Jiang, Feijun and Lee, Chin-Hui},
+  booktitle={2023 IEEE International Conference on Multimedia and Expo (ICME)},
+  title={Improving Audio-Visual Speech Recognition by Lip-Subword Correlation Based Visual Pre-training and Cross-Modal Fusion Encoder},
+  year={2023}, 
+  volume={},
+  number={},
+  pages={2627--2632},
+  doi={10.1109/ICME55011.2023.00447}
+}
+						
+						</p>
+
+						<p>We will provide the code and the pre-trained model parameters of the ASR model. In the development stage of the MISP 2023 challenge, participants can independently decode the extracted speech from AVTSE and calculate the CER to evaluate the performance. In the evaluation stage, to compare the performance of the AVTSE system more fairly, we do not allow participants to adjust the ASR model to obtain unfair results. Therefore, participants need to provide us with the extracted speech, and we will decode and calculate the CER for ranking. In addition, we will use the DNSMOS as a reference to explore the relationship between listening and back-end tasks.</p>
+
+						<h1 style="font-size: 150%;">Guidelines</h1>
+						<h2 style="font-size: 120%;">Can I use extra audio/video/text data?</h2>
+						<p>We will open two rankings based on whether external data, apart from the MISP dataset, has been utilized. However, it is worth noting that we will only submit the ranking which is without using them to ICASSP SPGC. This is because we encourage technological innovation, rather than relying on large amounts of data to train models.</p>
+						<p>If participants use additional data, they should follow the following rules:</p>
+						<ul>
+					        <li>The used external resource is clearly referenced and freely accessible to any other research group worldwide. External data refers to public datasets or trained models. The data must be public and freely available.</li>
+							<li>The list of external data sources used in training must be clearly indicated in the technical report.</li>
+							<li>Participants inform the organizers in advance about such data sources, so that all competitors know about them and have an equal opportunity to use them. Please send an email to the track coordinators; we will update the list of external datasets on the <a href="extral_data.html">web page</a> accordingly. Once the evaluation set is published, the list of allowed external data resources is locked (no further external sources allowed).</li>
+						</ul>
+						<p>We hope participants will pay more attention to technological innovation, especially novel model architectures, instead of relying on using more data. This is not a pure competition, but a “scientific” challenge activity.</p>
+
+
+						<h2 style="font-size: 120%;">Can I use a system different from that in the official baseline pipeline?</h2>
+						<p>There is no limitation on AVTSE model structure and model training technology used by participants. You are entirely free in the development of your system.
+							In particular, you can:</p>
+						<ul>
+					        <li>use the single-channel or multi-channel audio data</li>
+							<li>use other video pre-processing methods</li>
+							<li>use real or simulated data</li>
+							<li>use other simulation methods</li>
+							<li>use other audio features and visual features</li>
+							<li>use other post-processing methods</li>
+						</ul>
+
+						<h2 style="font-size: 120%;">Which information can I use?</h2>
+						<p>You can use the following annotations for training, development, and evaluation:</p>
+						<ul>
+					        <li>the corresponding room sizes</li>
+							<li>the corresponding configuration labels</li>
+							<li>the corresponding speaker labels</li>
+							<li>the start and end times of each speaker's speech</li>
+						</ul>
+
+						<h2 style="font-size: 120%;">Which information shall I not use?</h2>
+						<p>Manual modification of the data or the annotations (e.g., manual refinement of the utterance start and end times) is forbidden. All parameters should be tuned on the training set or the development set. Modifications of the development set are allowed, provided that its size remains unchanged and these modifications do not induce the risk of inadvertently biasing the development set toward the particular speakers or acoustic conditions in the evaluation set. For instance, enhancing the signals, applying “unbiased” transformations or automatically refining the utterance start and end times is allowed. Augmenting the development set by generating simulated data, applying biased signal transformations (e.g., systematically increasing intensity/pitch), or selecting a subset of the development set is forbidden. In case of doubt, please ask us ahead of the submission deadline.</p>
+				
+				
+						<h2 style="font-size: 120%;">Which results should I submit?</h2>
+						<p>For every tested system, you need to submit the speech to be tested (extracted from AVTSE) in the evaluation set, and we will feed the submitted speech into the backend ASR model. Then we will display the CER results and update them on the leaderboard. In addition, all participants should submit the system report after the leaderboard freeze.</p>
+				
+				</section>
+
+
+			<!-- Gigantic Heading -->
+<!-- 				<section class="wrapper style2">
+					<div class="container">
+					</div>
+				</section>
+
+				<section class="wrapper style1">
+					<div class="container">
+						<h1 style="font-size: 150%;">......</h1>
+					</div>
+				</section> -->
+
+			<!-- Footer -->
+				<div id="footer">
+						<div class="copyright">
+							<ul class="menu">
+								<li>&copy; All rights reserved</li><li>E-mail: mispchallenge@gmail.com</li>
+							</ul>
+						</div>
+
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE HTML>
+<!--
+	Arcana by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>MISP Challenge-Task2 Data</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header">
+
+					<!-- Logo -->
+					<!-- <img src="images/isca.png" width="6%" height="6%" style="margin:0 77% 0 0;"> -->
+					<!-- <h1 style="font-size: 120%;  margin: -4% 0 -2% 0"><a href="index.html" id="logo">Multimodal Information
+							Based Speech Processing (MISP) Challenge 2023</a></h1> -->
+					<h1 style="font-size: 120%;  margin: -1% 0% -1% 0%;"><a href="index.html" id="logo">Multimodal Information
+								Based Speech Processing (MISP) 2023 Challenge</a></h1> 	
+					<img src="images/ieee.svg" width="7%"height="7%" style="margin:-10% 0% 3% 79%;">
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="overview.html">Overview</a></li>
+								<li class="current"><a href="data.html">Data</a></li>
+								<li>
+									<a href="#">Task</a>
+									<ul>
+										<li><a href="task1_instructions.html">Instructions</a></li>										
+										<li><a href="task1_software.html">Baseline</a></li>
+						                <!-- <li><a href="task1_submission.html">Submission</a></li> -->
+										<li><a href="task1_leaderboard.html">Leaderboard</a></li>
+									</ul>
+								</li>
+								<!-- <li>
+									<a href="#">Task3</a>
+									<ul>
+										<li><a href="task3_instructions.html">Instructions</a></li>
+										<li><a href="task3_data.html">Data</a></li>
+										<li><a href="task3_software.html">Software</a></li>
+										<li><a href="task3_submission.html">Submission</a></li>
+									</ul>
+								</li> -->
+								<li><a href="download.html">Registration</a></li>
+								<li><a href="extral_data.html">Extra Data</a></li>
+								<!-- <li><a href="results.html">Results</a></li> -->
+								<!-- <li><a href="contact.html">Contact</a></li> -->
+							</ul>
+						</nav>
+
+				</div>
+
+			<!-- Main -->
+				<section class="wrapper style1">
+					<div class="container">
+						<p>In the MISP 2021 challenge, we released a large multi-microphone conversational audio-visual corpus. This corpus focus on the home-TV scenarios: 2-6 people communicating each other with TV noise in the background. The detailed scenario and recording setup can be found in the first paper. In the follow-up work, we have resolved authorization and storage issues to fully release the updated corpus of MISP2021 Challenge to all researchers. The detailed description of the updated dataset is published in the second paper.</p>
+						<!-- <p></br></p> -->
+						<ol>
+							<li><a href="https://ieeexplore.ieee.org/abstract/document/9746683">The First Multimodal Information Based Speech Processing (MISP) Challenge: Data, Tasks, Baselines and Results</a></li>
+							<p>
+								Please cite the following paper:</br>
+								<font size="4">
+									@INPROCEEDINGS{chen2022misp,</br>
+									author={Chen, Hang and Zhou, Hengshun and Du, Jun and Lee, Chin-Hui and Chen, Jingdong and Watanabe, Shinji and Siniscalchi, Sabato Marco and Scharenborg, Odette and Liu, Di-Yuan and Yin, Bao-Cai and Pan, Jia and Gao, Jian-Qing and Liu, Cong},</br>
+									booktitle={Proc. ICASSP 2022},</br> 
+									title={The First Multimodal Information Based Speech Processing (MISP) Challenge: Data, Tasks, Baselines and Results}, </br>
+									year={2022}}
+								</font>
+							</p>
+
+							<li><a href="https://www.isca-speech.org/archive/pdfs/interspeech_2022/chen22o_interspeech.pdf">Audio-Visual Speech Recognition in MISP2021 Challenge: Dataset Release and Deep Analysis</a></li>
+							<p>
+								Please cite the following paper:</br>
+								<font size="4">
+									@INPROCEEDINGS{2022misptask2,</br>
+									author={Chen, Hang and Du, Jun and Dai, Yusheng and Lee, Chin-Hui and  Siniscalchi, Sabato Marco and Watanabe, Shinji and Scharenborg, Odette and Chen, Jingdong and Yin, Bao-Cai and Pan, jia},</br>
+									booktitle={Proc. INTERSPEECH 2022},</br> 
+									title={Audio-Visual Speech Recognition in MISP2021 Challenge: Dataset Release and Deep Analysis}, </br>
+									year={2022}}</br>
+								</font>
+							</p>
+						</ol>
+						
+						
+						<p>In the MISP 2022 challenge, we release a new development set and a new evaluation set, which has no duplicate speakers compared with other sets.</p>
+
+						<p>Since the previous two MISP challenges did not attract front-end speech processing systems, participants can directly use the raw data. However, this year, for the AVTSE task, clean reference speech in training set is required for model training. Due to the possibility of huge noise interference or unclear speech in part of the original near-field audio, we should conduct data cleansing on the training set based on the MISP 2022 dataset. Firstly, we divide the near-field speech into several segments based on timestamps, each containing only one speaker. Meanwhile, we preserve 5% of silence at the beginning and end of each segment (with a maximum duration of 4 seconds). Then the deep noise suppression mean opinion score (DNSMOS) is used to select segments with high speech quality, a non-intrusive speech quality metric t0 evaluate audio without reference to clean speech. We select the overall quality (OVRL) metric in DNSMOS, as it provides a comprehensive assessment of audio and background noise quality. We screen a total of 22.13 hours of speech segments with high OVRL scores in training set. We will provide a list and timestamps of the audio we have filtered. Participants can directly use them or utilize different methods to filter the data.</p>
+
+						<p>Due to the differences in crystal clocks of recording devices, there may be misalignment between near-field and far-field audio. Therefore, for the AVTSE task, we recommend that participants use the near-field audio to simulate the far-field audio and use the near-field audio as labels to train the model, or directly use far-field data for joint training with the back-end ASR model. We will provide a data simulation script that allows participants to utilize the screened near-field speech to simulate far-field scenarios easily. This script can generate reverbs based on room and device information and add noise with different signal-to-noise ratios (SNRs) to the speech segment, generating 6-channel far-field audio data. It is worth noting that this simulation method is not unique, and participants can design other simulation methods themselves.</p>
+
+						<p>The development set will use the audio data in development set of MISP 2022 challenge. The evaluation set will add some new sessions to the evaluation set of MISP 2022, which focus on female dialogue scenarios. Our research has revealed that distinguishing speaker voices in these female dialogue scenarios is more challenging, thus increasing the difficulty level for participants. In the development and evaluation sets, we will only provide the far-field audio and the middle-field video.</p>
+
+						<p>The data have been split into training, development, and evaluation sets as follows (evaluation set will be released later).</p>
+						<center>
+							<figure style="padding:0px;border:0px; margin:10px">
+								<img src="images/2023_data_table1_new.png" style="width:60%;padding:0px;border:0" />
+							</figure>
+						</center>
+						<p><b>Audio</b></p>
+						<p>
+							All audio data are distributed as WAV files with a sampling rate of 16 kHz. Each session consists of the recordings made by the far-field linear microphone array with 6 microphones, the middle-field linear microphone array with 2 microphones and the near-field high-fidelity microphones worn by each participant. These WAV files are named as follows:</br>
+							Far-field array microphone:</br>
+							< Room ID >_< Speakers IDs >_< Configuration ID >_< Index > _Far_< Channel ID >.wav</br>
+							Middle-field array microphone:</br>
+							< Room ID >_< Speakers IDs >_< Configuration ID >_< Index > _Middle_< Channel ID >.wav</br>
+							Near-field high-fidelity microphone:</br>
+							< Room ID >_< Speakers IDs >_< Configuration ID >_< Index > _Near_< Speaker ID >.wav
+						</p>
+						<p><b>Video</b></p>
+						<p>
+							All video data are distributed as MP4 files with a frame rate of 25 fps. Each session consists of the recordings made by the far-field wide-angle camera and the middle-field high-definition cameras worn by each participant. These MP4 files are named as follows:</br>
+							Far-field wide-angle camera (1080p):</br>
+							< Room ID >_< Speakers IDs >_< Configuration ID >_< Index > _Far.mp4</br>
+							Middle-field high-definition camera (720p):</br>
+							< Room ID >_< Speakers IDs >_< Configuration ID >_< Index > _Middle_< Speaker ID >.mp4
+						</p>
+
+						<p>
+							In addition, we will provide the detection results of face and lip. It includes the position of each speaker's face and lips in each frame of the video. Participants can choose whether to use this information.
+						</p>
+						<p>
+							In order to cover the real scene comprehensively and evenly, we designed the following recording configuration by controlling variables as in Table 1.
+						</p>
+						<center>
+							<table  class='default'>
+							    <tr style="border: solid 1px;">
+							        <th style="border: solid 1px;">Config ID</th>
+							        <th style="border: solid 1px;">Time</th>
+							        <th style="border: solid 1px;">Content</th>
+							        <th style="border: solid 1px;">Light</th>
+							        <th style="border: solid 1px;">TV</th>
+							        <th style="border: solid 1px;">Group</th>
+							    </tr> 
+							    <tr style="vertical-align: center; border: solid 1px;">
+							        <th style="border: solid 1px;">00</th>
+							        <td rowspan="9" valign="middle" style="border: solid 1px;">Day</td>
+							        <td style="border: solid 1px;">Wake word & Similar words</td>
+							        <td style="border: solid 1px;">off</td>
+							        <td style="border: solid 1px;">on</td>
+							        <td style="border: solid 1px;">1</td>
+							    </tr>
+							    <tr style="border: solid 1px;">
+							        <th style="border: solid 1px;">01</th>
+							        <td rowspan="12" valign="middle" style="border: solid 1px;">Talk freely</td>
+							        <td style="border: solid 1px;">off</td>
+							        <td style="border: solid 1px;">on</td>
+							        <td style="border: solid 1px;">1</td>
+							    </tr>
+							    <tr style="border: solid 1px;">
+							        <th style="border: solid 1px;">02</th>
+							        <td style="border: solid 1px;">on</td>
+							        <td style="border: solid 1px;">on</td>
+							        <td style="border: solid 1px;">1</td>
+							    </tr>
+							    <tr style="border: solid 1px;">
+							        <th style="border: solid 1px;">03</th>
+							        <td style="border: solid 1px;">off</td>
+							        <td style="border: solid 1px;">off</td>
+							        <td style="border: solid 1px;">2</td>
+							    </tr>
+							    <tr style="border: solid 1px;">
+							        <th style="border: solid 1px;">04</th>
+							        <td style="border: solid 1px;">on</td>
+							        <td style="border: solid 1px;">off</td>
+							        <td style="border: solid 1px;">2</td>
+							    </tr>
+							    <tr style="border: solid 1px;">
+							        <th style="border: solid 1px;">05</th>
+							        <td style="border: solid 1px;">off</td>
+							        <td style="border: solid 1px;">on</td>
+							        <td style="border: solid 1px;">2</td>
+							    </tr>
+							    <tr style="border: solid 1px;">
+							        <th style="border: solid 1px;">06</th>
+							        <td style="border: solid 1px;">on</td>
+							        <td style="border: solid 1px;">on</td>
+							        <td style="border: solid 1px;">2</td>
+							    </tr>
+							    <tr style="border: solid 1px;">
+							        <th style="border: solid 1px;">07</th>
+							        <td style="border: solid 1px;">on</td>
+							        <td style="border: solid 1px;">off</td>
+							        <td style="border: solid 1px;">1</td>
+							    </tr>
+							    <tr style="border: solid 1px;">
+							        <th style="border: solid 1px;">08</th>
+							        <td style="border: solid 1px;">off</td>
+							        <td style="border: solid 1px;">off</td>
+							        <td style="border: solid 1px;">1</td>
+							    </tr>
+							    <tr style="border: solid 1px;">
+							        <th style="border: solid 1px;">09</th>
+							        <td rowspan="4" valign="middle" style="border: solid 1px;">Night</td>
+							        <td style="border: solid 1px;">on</td>
+							        <td style="border: solid 1px;">on</td>
+							        <td style="border: solid 1px;">1</td>
+							    </tr>
+							    <tr style="border: solid 1px;">
+							        <th style="border: solid 1px;">10</th>
+							        <td style="border: solid 1px;">on</td>
+							        <td style="border: solid 1px;">off</td>
+							        <td style="border: solid 1px;">2</td>
+							    </tr>
+							    <tr style="border: solid 1px;">
+							        <th style="border: solid 1px;">11</th>
+							        <td style="border: solid 1px;">on</td>
+							        <td style="border: solid 1px;">on</td>
+							        <td style="border: solid 1px;">2</td>
+							    </tr>
+							    <tr style="border: solid 1px;">
+							        <th style="border: solid 1px;">12</th>
+							        <td style="border: solid 1px;">on</td>
+							        <td style="border: solid 1px;">off</td>
+							        <td style="border: solid 1px;">1</td>
+							    </tr>
+							    <tr>
+							        <th colspan="12" style="border: solid 1px;">Tab.2. Configuration</th>
+							    </tr>
+							</table>
+						</center>
+
+						<p>
+							"Time" refers to the recording time, the value is day or night. "Content" refers to the speaking content. We also recorded some data only containing wake-up/similar word to support audio-visual voice wake-up task. "Light" refers to turning on/off the light. "TV" refers to turning on/off the TV. "Group" refers to how much groups of participants in a conversation.</br>
+							By observing the real conversations these were taking place in real living room, we found that the participants would be divided into several groups to discuss different topics. Compared with all participants discussing the same topic, grouping would result in higher overlap ratios. We found that average speech overlap ratios of 𝐺𝑟𝑜𝑢𝑝 = 1 and 𝐺𝑟𝑜𝑢𝑝 = 2 are 10%~20% and 50%~70%, respectively. And the number of groups greater than 3 is very rare when the number of participants is no more than 6.
+						</p>
+					</div>
+				</section>
+
+			<!-- Gigantic Heading -->
+
+			<!-- Footer -->
+				<div id="footer">
+					<!-- Copyright -->
+						<div class="copyright">
+							<ul class="menu">
+								<li>&copy; All rights reserved</li><li>E-mail: mispchallenge@gmail.com</li>
+							</ul>
+						</div>
+
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

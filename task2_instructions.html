@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<!--
+	Arcana by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>MISP Challenge-Task2 Instructions</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header">
+
+					<!-- Logo -->
+					<!-- <img src="images/isca.png" width="6%" height="6%" style="margin:0 77% 0 0;"> -->
+					<!-- <h1 style="font-size: 120%;  margin: -4% 0 -2% 0"><a href="index.html" id="logo">Multimodal Information
+							Based Speech Processing (MISP) Challenge 2023</a></h1> -->
+					<h1 style="font-size: 120%;  margin: -1% 0% -1% 0%;"><a href="index.html" id="logo">Multimodal Information
+								Based Speech Processing (MISP) Challenge 2023</a></h1> 	
+					<img src="images/ieee.svg" width="7%"height="7%" style="margin:-10% 0% 3% 79%;">
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="overview.html">Overview</a></li>
+								<li><a href="data.html">Data</a></li>
+								<li>
+									<a href="#">Track1</a>
+									<ul>
+										<li><a href="task1_instructions.html">Instructions</a></li>										
+										<li><a href="task1_software.html">Software</a></li>
+						                <li><a href="task1_leaderboard.html">Leaderboard</a></li>
+									</ul>
+								</li>
+								<li class="current">
+									<a href="#">Track2</a>
+									<ul>
+										<li><a href="task2_instructions.html">Instructions</a></li>										
+										<li><a href="task2_software.html">Software</a></li>
+						                <li><a href="task2_leaderboard.html">Leaderboard</a></li>
+									</ul>
+								</li>
+								<!-- <li>
+									<a href="#">Task3</a>
+									<ul>
+										<li><a href="task3_instructions.html">Instructions</a></li>
+										<li><a href="task3_data.html">Data</a></li>
+										<li><a href="task3_software.html">Software</a></li>
+										<li><a href="task3_submission.html">Submission</a></li>
+									</ul>
+								</li> -->
+								<li><a href="download.html">Registration</a></li>
+								<li><a href="extral_data.html">Extra Data</a></li>
+								<!-- <li><a href="contact.html">Contact</a></li> -->
+							</ul>
+						</nav>
+
+				</div>
+			<!-- Main -->
+				<section class="wrapper style1">
+					<div class="container">
+						
+						<h1 style="font-size: 150%;">Track2 Instructions</h1>
+						<p>Audio-visual diarization and recognition (AVDR) focus on addressing “who spoken what when” using audio and video data. Different from previous challenge, the track 2 of MISP2023 Challenge is an extended track from audio-visual speech recognition (AVSR) in MISP2021 by replacing oracle speaker diarization results with audio-visual speaker diarization (AVSD) results.</p>
+						<p>In this Challenge, we adopt concatenated minimum permutation character error rate (cpCER) as an official metric for our ranking. The calculation of cpCER is divided into three steps.</p>
+						
+
+						<h1 style="font-size: 150%;">Evaluation</h1>
+						<p>In this Challenge, we adopt concatenated minimum permutation character error rate (cpCER) as an official metric for our ranking. The calculation of cpCER is divided into three steps.</p>
+						<ol>
+					        <li>Recognition results and reference transcriptions belonging to the same speaker are concatenated on the timeline in a session.</li>
+							<li>The character error rate (CER) of permutations of speakers is calculated as follows:</li>
+							<center>
+								<figure style="padding:0px;border:0px; margin:10px">
+								<img src="images/CER.png" style="width:300px;padding:0px;border:0" />
+								</figure>
+							</center>
+							<p>where:</p>
+							<ul>
+								<li>S = Number of Substitutions</li>
+								<li>D = Number of Deletions</li>
+								<li>I = Number of Insertions</li>
+								<li>N = Number of characters in ground truth</li>
+							</ul>
+							<li>Select the lowest CER as the cpCER in the session.</li>
+						</ol>
+
+						
+						<p>Due to the problem of permutation invariant training (PIT) and annotated segment text correspondence, we adopt cpCER as the final evaluation metric. The lower cpCER value (with 0 being a perfect score), the better the diarization and recognition performance.</p>
+						<p>For training and development test sets, we will prepare the scoring script which will be released together with the baseline. For the evaluation test set, the participant should submit a text file for each session to the Codelab platform which contains recognition results. And cpCER will be calculated and updated in the leaderboard.</p>
+
+
+						<h1 style="font-size: 150%;">Can I use extra audio/video/text data?</h1>
+						<p>We restrict the rules of additional data usage. External audio data and video data are allowed to be used. Significantly,
+							participants can utilize timestamps, speaker tags, and other information except for text contents.</p>
+						<p>But use of external slient video data is allowed in the pretrained model training under the following conditions:</p>
+						<ul>
+							<li>The used external resource is clearly referenced and freely accessible to any other research group in the world. External data refers to public datasets or trained models. The data must be public and freely available before 15th of January 2023.</li>
+							<li>The list of external data sources used in training must be clearly indicated in the technical report.</li>
+							<li>Participants inform the organizers in advance about such data sources, so that all competitors know about them and have an equal opportunity to use them. Please send an email to the track coordinators; we will update the list of external datasets on the <a href="extral_data.html">web page</a> accordingly. Once the evaluation set is published, the list of allowed external data resources is locked (no further external sources allowed).</li>
+						</ul>
+
+						<p>We hope participants will pay more attention to technological innovation, especially novel model architectures, instead of relying on using more data. This is not a pure competition, but a “scientific” challenge activity. There are similar rules in CHiME-5/6 challenge, too.</p>
+
+
+						<h1 style="font-size: 150%;">Which information can I use?</h1>
+						<p>You can use the following annotations for training, development, and evaluation:</p>
+						<ul>
+					        <li>the corresponding room sizes</li>
+							<li>the corresponding configuration labels (as shown in Tab.1)</li>
+							<li>the corresponding speaker labels</li>
+							<li>the start and end times of all utterances</li>
+						</ul>
+						<p>For training and development, you can use the full-length recordings of all recording devices. For evaluation, you are allowed to use for a given utterance the full-length recordings of far-field devices (both the linear 6 microphones array and the wide-angle camera) for that session.</p>
+
+
+						<h1 style="font-size: 150%;">Which information shall I not use?</h1>
+						<p>Manual modification of the data or the annotations (e.g., manual refinement of the utterance start and end times) is forbidden. All parameters should be tuned on the training set or the development set. Modifications of the development set are allowed, provided that its size remains unchanged and these modifications do not induce the risk of inadvertently biasing the development set toward the particular speakers or acoustic conditions in the evaluation set. For instance, enhancing the signals, applying “unbiased” transformations or automatically refining the utterance start and end times is allowed. Augmenting the development set by generating simulated data, applying biased signal transformations (e.g., systematically increasing intensity/pitch), or selecting a subset of the development set is forbidden. In case of doubt, please ask us ahead of the submission deadline.</p>
+						
+
+						<h1 style="font-size: 150%;">Can I use the AVDR system different from that in the official baseline pipeline?</h1>
+						<p>Again, you are entirely free in the development of your system.</p>
+						<p>In particular, you can:</p>
+						<ul>
+					        <li>include a single-channel or multi-channel audio enhancement front-end</li>
+							<li>include a video pre-processing</li>
+							<li>use other acoustic features and visual features</li>
+							<li>modify the acoustic/visual/acoustic-visual model architecture or the training criterion</li>
+							<li>modify the lexicon and the language model</li>
+							<li>use any rescoring technique</li>
+						</ul>
+
+
+						<h1 style="font-size: 150%;">Which results should I report?</h1>
+						<p>For every tested system, you should report cpCER in the evaluation set.</p>
+
+				</section>
+
+
+			<!-- Footer -->
+				<div id="footer">
+					<!-- Copyright -->
+						<div class="copyright">
+							<ul class="menu">
+								<li>&copy; All rights reserved</li><li>E-mail: mispchallenge@gmail.com</li>
+							</ul>
+						</div>
+
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
