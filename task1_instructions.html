@@ -86,11 +86,11 @@
 
 						<h1 style="font-size: 150%;">Evaluation</h1>
 						<p>Diarization error rate (DER) is adopted as the evaluation criterion. The lower the DER value (with 0 being a perfect score), the higher the ranking. DER is calculated as: the summed time of three different errors of speaker confusion (SC), false alarm (FA) and missed detection (MD) divided by the total duration time, as shown in</p>
-						<center> 
-							<figure style="padding:0px;border:0px; margin:10px">
-							<img src="images/2024task1_1.png" style="width:300px;padding:0px;border:0" />
-							</figure>
-						</center>
+						<div>
+							\[
+							{\rm DER} = \frac{T_{\rm SC}+T_{\rm FA}+T_{\rm MD}}{T_{\rm total}}
+							\]
+						</div>
 						<p>where \( T_{\rm SC} \), \(T_{\rm FA}\) and \(T_{\rm MD}\) are the time duration of the three errors, and $T_{\rm total}$ is the total time duration. It is worth noting that we do not set the ``no score'' collar, and overlapping speech will be evaluated. </p>
 
 				
