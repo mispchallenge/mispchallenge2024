@@ -424,7 +424,7 @@
 						</p> -->
 					</div>
 				</section>
-				<script>
+				<!-- <script>
 					function checkPassword(event, url) {
 						event.preventDefault(); // 阻止默认链接跳转
 						const password = prompt("请输入密码："); // 弹出密码输入框
@@ -436,7 +436,26 @@
 							alert("密码错误，无法跳转！");
 						}
 					}
+				</script> -->
+
+				<script>
+					function checkPassword(event, url) {
+						event.preventDefault(); // 阻止默认链接跳转
+						const password = prompt("请输入密码："); // 弹出密码输入框
+						const correctPassword = "misp666"; // 设置正确的密码
+					
+						if (password === correctPassword) {
+							const link = document.createElement('a');
+							// 需要下载的链接地址（假设url是文件的下载地址）
+							link.href = url;
+							link.setAttribute('referrerpolicy', 'no-referrer');
+							link.click();  // 自动触发点击事件开始下载
+						} else {
+							alert("密码错误，无法下载！");
+						}
+					}
 				</script>
+  
 
 			<!-- Gigantic Heading -->
 
