@@ -258,7 +258,7 @@
 
 
 						<h2>Downloads</h2>
-						<p>This dataset is available under the <a href="license_link">license</a>. By using the corpus, you agree to the terms of this License. If you do not agree to this License, then you do not have any rights to use the corpus, and you must immediately cease using the corpus.</p>
+						<p>This dataset is available under the specified license. Before using the corpus, please navigate to the Registration page to sign up. After registering, you will receive a download password.</p>
 						<table>
 							<thead>
 								<tr>
@@ -270,27 +270,42 @@
 							<tbody>
 								<tr>
 									<!-- <td><a href="https://mispchallenge.github.io/mispchallenge2024/extral_data.html">training-CSOBx3.zip</a></td> -->
-									<td><a href="#" onclick="checkPassword(event, 'https://mispchallenge.github.io/mispchallenge2024/extral_data.html')">training-PSCx3.7.zip</a></td>
+									<td><a href="#" onclick="checkPassword(event, 'https://ai-contest-static.xfyun.cn/misp/training-CSOBx3.zip')">training-CSOBx3.zip</a></td>
 									<td>151 G</td>
 									<td>9cdb120a91c6e0d7dbc90e0fa1e3bd9a</td>
 								</tr>
 								<tr>
-									<td><a href="#" onclick="checkPassword(event, 'https://mispchallenge.github.io/mispchallenge2024/extral_data.html')">training-F8N.zip</a></td>
+									<td><a href="#" onclick="checkPassword(event, 'https://ai-contest-static.xfyun.cn/misp/training-F8N.zip')">training-F8N.zip</a></td>
 									<td>46.2 G</td>
 									<td>222e288a6f8c28351787a135adfded78</td>
 								</tr>
 								<tr>
-									<td><a href="#" onclick="checkPassword(event, 'https://mispchallenge.github.io/mispchallenge2024/extral_data.html')">training-PSCx3.2.zip</a></td>
+									<td><a href="#" onclick="checkPassword(event, 'https://ai-contest-static.xfyun.cn/misp/training-PSCx3.2.zip')">training-PSCx3.2.zip</a></td>
 									<td>318 G</td>
 									<td>11d3e0369a05341f330c100f98c308e2</td>
 								</tr>
 								<tr>
-									<td><a href="#" onclick="checkPassword(event, 'https://mispchallenge.github.io/mispchallenge2024/extral_data.html')">training-PSCx3.3.zip</a></td>
+									<td><a href="#" onclick="checkPassword(event, 'https://ai-contest-static.xfyun.cn/misp/training-PSCx3.3.zip')">training-PSCx3.3.zip</a></td>
 									<td>289 G</td>
 									<td>6b5c4de9c7b461ae14896e15fca04b42</td>
 								</tr>
 								<tr>
-									<td><a href="#" onclick="checkPassword(event, 'https://mispchallenge.github.io/mispchallenge2024/extral_data.html')">training-PSCx3.4.zip</a></td>
+									<td><a href="#" onclick="checkPassword(event, 'https://ai-contest-static.xfyun.cn/misp/training-PSCx3.4.zip')">training-PSCx3.4.zip</a></td>
+									<td>313 G</td>
+									<td>ac234e8350cb6435edaa02ccd87e2</td>
+								</tr>
+								<tr>
+									<td><a href="#" onclick="checkPassword(event, 'https://ai-contest-static.xfyun.cn/misp/training-PSCx3.5.zip')">training-PSCx3.5.zip</a></td>
+									<td>313 G</td>
+									<td>ac234e8350cb6435edaa02ccd87e2</td>
+								</tr>
+								<tr>
+									<td><a href="#" onclick="checkPassword(event, 'https://ai-contest-static.xfyun.cn/misp/training-PSCx3.6.zip')">training-PSCx3.6.zip</a></td>
+									<td>313 G</td>
+									<td>ac234e8350cb6435edaa02ccd87e2</td>
+								</tr>
+								<tr>
+									<td><a href="#" onclick="checkPassword(event, 'https://ai-contest-static.xfyun.cn/misp/training-PSCx3.7.zip')">training-PSCx3.7.zip</a></td>
 									<td>313 G</td>
 									<td>ac234e8350cb6435edaa02ccd87e2</td>
 								</tr>
@@ -406,7 +421,7 @@
 					function checkPassword(event, url) {
 						event.preventDefault(); // 阻止默认链接跳转
 						const password = prompt("请输入密码："); // 弹出密码输入框
-						const correctPassword = "123456"; // 设置正确的密码
+						const correctPassword = "misp666"; // 设置正确的密码
 			
 						if (password === correctPassword) {
 							window.location.href = url; // 如果密码正确，则跳转到目标页面
